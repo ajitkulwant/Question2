@@ -1,0 +1,25 @@
+public class MaxWords
+{
+    static int i,cnt=0,count;
+    static int wordcount(String s)
+    {
+        char ch[]= new char[s.length()];      //in string especially we have to mention the () after length
+//        int len=s.length();
+//        System.out.println(""+len);
+        for(i=0;i<s.length();i++)
+        {
+            ch[i]= s.charAt(i);
+            if( ((i>0)&&(ch[i]!=' ')&&(ch[i-1]==' ')) || ((ch[0]!=' ')&&(i==0)) )
+//            if
+//            if( ((i>0)&&(ch[i]!=' ')&&(ch[i-1]==' ')) || ((ch[0]!=' ')&&(i==0)) )
+            cnt++;
+        }
+        return cnt;
+    }
+    
+    public static void main (String args[])
+    {
+        count=MaxWords.wordcount("We test coders. Give us a try?");      
+        System.out.println("The number of words are :  "+count);
+    }
+}
